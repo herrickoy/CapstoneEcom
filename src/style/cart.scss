@@ -1,0 +1,41 @@
+.cart-page-wrapper {
+    background: linear-gradient(to top left,#33ccff 0%, peachpuff  100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+    .currentCart {
+        width: 70vw;
+        height: 30vw;
+        margin-top: 30px;
+        background-color: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .currentTotal {
+        width: 70vw;
+        height: 10vw;
+        margin-top: 20px;
+        background-color: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .purchase-button {
+        height: 55px;
+        width: 150px;
+        margin-top: 25px;
+        border-radius: 5px;
+        background-color: green;
+        color: honeydew;
+        font-size: 1.5em;
+    }
+}

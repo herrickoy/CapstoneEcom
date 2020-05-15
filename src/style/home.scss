@@ -1,0 +1,192 @@
+.homepage-wrapper {
+
+    
+    .home-content-wrapper {
+        background-color: peachpuff;
+        background: linear-gradient(to top left,#33ccff 0%, peachpuff  100%);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 15px;
+        grid-gap: 5.35vw;
+
+        .left-home-column {
+            display: flex;
+            flex-direction: column;
+
+            .sign-in-btn-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 30vw;
+            
+
+                .sign-in-btn {
+                    width: 28vw;
+                    height: 15vw;
+                    background-color: plum;
+                    border-radius: 4px;
+                    box-shadow: 15px 10px 7px 0px rgba(47,189,214,0.40);
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        background-color: rgb(203, 120, 203);
+                        box-shadow: 9px 7px 7px 0px rgba(47,189,214,0.55);
+                        width: 27.75vw;
+                        height: 14.85vw;
+                    }
+
+                    h1 {
+                        font-size: 100%;
+                    }
+                    p {
+                        font-size: 100%;
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            .buttHurt {
+                display: flex;
+                flex-direction: row;
+                width: 28vw;
+                height: 350px;
+                font-size: 1em;
+                font-weight: 800;
+                padding-top: 35px;
+
+                .painful-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                
+                    p {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1.5em;
+                    }
+                    .painful {
+                        display: flex;
+                        height: fit-content;
+                        align-self: flex-end;
+                        justify-content: center;
+                        padding-top: 20px;
+                    }
+                }
+                .bubble-link-wapper {
+                    position: relative;
+
+                    .thought-bubble {
+                        display: flex;
+                        position: absolute;
+                        top: 0px;
+                        left:0px;
+                        max-width: 150px;
+                    }
+                    .social-links {
+                        display: flex;
+                        align-items: flex-start;
+                        padding-top: 50px;
+                        position: absolute;
+                        top: 0px;
+                        left:35px;
+                        .social-media {
+                            max-width: 30px;
+                        }
+                    }
+                }
+                .p-bottom {
+                    padding-left: 25px;
+                    transform: translateY(150px);
+                    font-size: 1.5em;
+                    
+
+                }
+            }
+        }
+        @media (max-width: 1000px) {
+            .painful {
+                width: 150px;
+                height: 198px;
+            }
+            .thought-bubble {
+                 width: 125px;
+            }
+            .social-links {
+                display: flex;
+                align-items: flex-start;
+                padding-top: 50px;
+                position: absolute;
+                top: 0px;
+                left:25px;
+            }
+            .social-media {
+                width: 20px;
+            }
+        }
+        // MODAL HAS SEPERATE STYLE SHEET
+        .center-home-column {
+            
+            .paper-wrapper {
+                display: grid;
+                justify-content: center;
+                .paper {
+                    transform: translateX(-15px);
+                }
+            }
+        }
+
+
+        .right-home-column {
+
+
+        
+            .teach_kids {
+                display: flex;
+                
+
+                .teach_img {
+
+                    width: 100%;
+                    
+                }
+            }
+            .which-type-wrapper {
+                display: flex;
+                width: 393px;
+                height: 185;
+                justify-content: center;
+                align-content: center;
+                margin-top: 15px;
+
+                .which-type {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 10px;
+                    width: 380px;
+                    height: 175px;
+                    font-size: 20px;
+                    background-color: rgb(200, 222, 60);
+                    border-radius: 50px;
+                    box-shadow: 15px 10px 7px 0px rgba(47,189,214,0.40);
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        background-color: rgb(203, 173, 54);
+                        box-shadow: 9px 7px 7px 0px rgba(47,189,214,0.55);
+                        width: 387px;
+                        height: 182px;
+                    }
+
+                    h1 {
+                        font-size: 1.2em;
+                    }
+                    p {
+                        font-size: 18px;
+                        margin-top: 15px;
+                    }
+
+                }
+            }
+           
+        }
+    }
+}

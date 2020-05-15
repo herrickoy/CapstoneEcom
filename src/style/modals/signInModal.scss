@@ -1,0 +1,64 @@
+.ReactModal__Content--after-open {
+    background: rgb(250, 241, 227);
+}
+.modal-content-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3vw;
+
+    img{
+        padding-bottom: 50px;
+        border-radius: 5px;
+        
+    }
+
+    .home-modal-wrapper {
+        padding-bottom: 50px;
+
+        .modal-greeting {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 10px;
+            border: 3px solid navy;
+            background-color: paleturquoise;
+            font-size: 16px;
+            border-radius: 3px;
+        }
+
+        .inputs-wrapper {
+            margin-left: 35px;
+            
+            .modal-input_1 {
+                margin-right: 15px;
+                height: 25px;
+                border-radius: 5px;
+            }
+
+            .modal-input_2 {
+                height: 25px;
+                border-radius: 5px;
+            }
+        }
+
+        .modal-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+    
+            .modal-btn {
+                height: 25px;
+                width: 100px;
+                border-radius: 3px;
+                background-color: rgb(9, 215, 9);
+                font-weight: 900;
+                letter-spacing: .5px;
+            }
+        }
+    }
+
+    
+    
+}
