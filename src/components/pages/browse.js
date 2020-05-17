@@ -36,6 +36,30 @@ const modal1Products = [
   { id: uuidv4(), price: 9600, imgSrc: twelvePack, name: '12 pack of 3 ply toilet paper' }
 ]
 
+const modal2Products = [
+  { id: uuidv4(), price: 800, imgSrc: twoPlyRoll, name: 'roll of 2 ply toilet paper' },
+  { id: uuidv4(), price: 2600, imgSrc: twoPlysmallPack,  name: 'small pack of 2 ply toilet paper' },
+  { id: uuidv4(), price: 4600, imgSrc: twoPlylargePack,  name: 'large pack of  ply toilet paper' },
+  { id: uuidv4(), price: 7600, imgSrc: twoPlytwentyfour, name: '24 pack of of  ply toilet paper' },
+  { id: uuidv4(), price: 9900, imgSrc: twoPlystack, name: 'stack of 2 ply toilet paper' }
+]
+
+const modal3Products = [
+  { id: uuidv4(), price: 800, imgSrc: onePlyRoll, name: 'roll of 2 ply toilet paper' },
+  { id: uuidv4(), price: 3600, imgSrc: onePlysmallPack,  name: 'small pack of 2 ply toilet paper' },
+  { id: uuidv4(), price: 5600, imgSrc: onePlylargePack,  name: 'large pack of 2 ply toilet paper' },
+  { id: uuidv4(), price: 7800, imgSrc: onePlytwentyfour, name: '24 pack of of 2 ply toilet paper' },
+  { id: uuidv4(), price: 10000, imgSrc: onePlystack, name: 'stack of 2 ply toilet paper' }
+]
+
+const modal4Products = [
+  { id: uuidv4(), price: 800, imgSrc: hundredbill, name: '$100 dollar bill paper' },
+  { id: uuidv4(), price: 2600, imgSrc: anotherAhole,  name: 'A hole joke paper' },
+  { id: uuidv4(), price: 4600, imgSrc: slowyourroll,  name: 'slow your roll paper' },
+  { id: uuidv4(), price: 7600, imgSrc: kisses, name: 'kisses paper' },
+  { id: uuidv4(), price: 9900, imgSrc: radioactive, name: 'radioactive joke paper' }
+]
+
 class Browse extends Component {
   constructor(props, context) {
       super(props, context)
@@ -99,11 +123,6 @@ class Browse extends Component {
             <button className="closeModal" onClick={() => this.handleClose('myModal1')}>
               <h1>X</h1>
             </button>
-            <ul>
-                {
-                  this.state.collection.map(e => <li>{e.name} | price {e.price} </li>)
-                }
-              </ul>
                 <div className='landing-page-markers myModal1'>
                   { 
                     modal1Products.map((product) => (
@@ -125,26 +144,17 @@ class Browse extends Component {
               <h1>X</h1>
             </button>
                 <div className='landing-page-markers myModal2'>
-                  <p className="item-d-p">
-                    roll of 2 ply toilet paper
-                    <img id="5" onClick={(e)=>this.cartClick} src={twoPlyRoll} price="$1" className="modal-img" alt="image" />
-                  </p>
-                  <p className="item-d-p">
-                    small pack of 2 ply toilet paper
-                    <img id="6" onClick={(e)=>this.cartClick} src={twoPlysmallPack} price="$2" className="modal-img" alt="image" />
-                  </p>               
-                  <p className="item-d-p">
-                    large pack of 2 ply toilet paper
-                    <img id="7" onClick={(e)=>this.cartClick} src={twoPlylargePack} price="$3" className="modal-img" alt="image" />
-                  </p>               
-                  <p className="item-d-p">
-                    24 pack of 2 ply toilet paper
-                    <img id="8" onClick={(e)=>this.cartClick} src={twoPlytwentyfour} price="$4" className="modal-img" alt="image" />
-                  </p>               
-                  <p className="item-d-p">
-                    stack of 2 ply toilet paper
-                    <img id="9" onClick={(e)=>this.cartClick} src={twoPlystack} price="$5" className="modal-img" alt="image" />
-                  </p>                                               
+                { 
+                    modal2Products.map((product) => (
+                      <p className="item-d-p" key={product.id}>
+                        {product.name} ${Math.floor(product.price / 100)}
+                        <button onClick={() => {
+                          this.props.addItem(product)
+                          // window.alert('Something')
+                        }}><img id="0" name={product.name} src={product.imgSrc} price="$1" className="modal-img" alt="image" /></button>
+                      </p>
+                    ))
+                  }                                               
                 </div>
 
             </ReactModal>   
@@ -155,26 +165,17 @@ class Browse extends Component {
               <h1>X</h1>
             </button>
                 <div className='landing-page-markers myModal3'>
-                  <p className="item-d-p">
-                    roll of 1 ply toilet paper
-                    <img id="10" onClick={(e)=>this.cartClick} src={onePlyRoll} price="$1" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    small pack of 1 ply toilet paper
-                    <img id="11" onClick={(e)=>this.cartClick} src={onePlysmallPack} price="$1" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    large pack of 1 ply toilet paper
-                    <img id="12" onClick={(e)=>this.cartClick} src={onePlylargePack} price="$1" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    24 pack of 1 ply toilet paper
-                    <img id="13" onClick={(e)=>this.cartClick} src={onePlytwentyfour} price="$1" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    stack of 1 ply toilet paper
-                    <img id="14" onClick={(e)=>this.cartClick} src={onePlystack} price="$1" className="modal-img" alt="image" />
-                  </p>   
+                { 
+                    modal3Products.map((product) => (
+                      <p className="item-d-p" key={product.id}>
+                        {product.name} ${Math.floor(product.price / 100)}
+                        <button onClick={() => {
+                          this.props.addItem(product)
+                          // window.alert('Something')
+                        }}><img id="0" name={product.name} src={product.imgSrc} price="$1" className="modal-img" alt="image" /></button>
+                      </p>
+                    ))
+                  }
                 </div>
             </ReactModal>                  
             <ReactModal 
@@ -184,26 +185,17 @@ class Browse extends Component {
               <h1>X</h1>
             </button>
                 <div className='landing-page-markers myModal4'>
-                  <p className="item-d-p">
-                    $100 dollar bill paper
-                    <img id="15" onClick={(e)=>this.cartClick} src={hundredbill} price="$10" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    A hole joke paper
-                    <img id="16" onClick={(e)=>this.cartClick} src={anotherAhole} price="$10" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    slow your roll paper
-                    <img id="17" onClick={(e)=>this.cartClick} src={slowyourroll} price="$10" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    kisses paper
-                    <img id="18" onClick={(e)=>this.cartClick} src={kisses} price="$10" className="modal-img" alt="image" />
-                  </p>   
-                  <p className="item-d-p">
-                    radioactive joke paper
-                    <img id="19" onClick={(e)=>this.cartClick} src={radioactive} price="$10" className="modal-img" alt="image" />
-                  </p>   
+                { 
+                    modal4Products.map((product) => (
+                      <p className="item-d-p" key={product.id}>
+                        {product.name} ${Math.floor(product.price / 100)}
+                        <button onClick={() => {
+                          this.props.addItem(product)
+                          // window.alert('Something')
+                        }}><img id="0" name={product.name} src={product.imgSrc} price="$1" className="modal-img" alt="image" /></button>
+                      </p>
+                    ))
+                  }
                 </div>
             </ReactModal>                  
           </div>
