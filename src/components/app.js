@@ -24,12 +24,15 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null
+      user: null,
+      addedToCart: false,
+      
 
   }
   this.handleAuth = this.handleAuth.bind(this);
   this.handleLogout=this.handleLogout.bind(this);
   this.loginSuccess=this.loginSuccess.bind(this);
+  this.addItem=this.addItem.bind(this);
   }
 
   componentWillMount() {
@@ -72,11 +75,17 @@ export default class App extends Component {
   }
 
   
-  addItem = (props) => {
-    this.setState({
-      
-    })
+  addItem = (item) => {
+    let cart = localStorage.getItem('cart');
+    if(cart) {
+      cart = JSON.parse(cart);
+      cart = [...cart, item]
+    } else {
+      cart  = [item]
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
   }
+  
 
 
 
@@ -90,11 +99,11 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={Home}  />
               {/* SIGNIN SIGNUP MODAL ON HOME */}
-              <Route path="/browse" render={(props) => <Browse {...props} addItem={this.addToCart.bind(this, ...props)}  />} />
+              <Route path="/browse" render={(props) => <Browse addItem={this.addItem} />} />
               <Route path="/new-releases" component={NewReleases} />
               <Route path="/history-of" component={About} />
               <Route path="/quick-order" component={QuickOrder} />
-              <Route path="/cart" render={(props) => <Cart {...props}  />}/>
+              <Route path="/cart" component={Cart}/>
             </Switch>
           </div>
         </Router>
